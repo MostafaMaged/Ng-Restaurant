@@ -1,0 +1,24 @@
+<li
+  class="
+    list-group-item list-group-item-action
+    d-flex
+    justify-content-between
+    align-items-center
+  "
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
+  <div class="col-7">
+    <h5>{{ recipe.name }}</h5>
+    <p>{{ recipe.description }}</p>
+  </div>
+  <div class="col-5 d-flex flex-column align-items-end pr-0">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-fluid img-thumbnail"
+      style="max-width: 80%"
+    />
+  </div>
+</li>

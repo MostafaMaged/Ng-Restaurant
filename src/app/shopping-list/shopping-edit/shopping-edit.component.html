@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-12">
+    <form (ngSubmit)="onAddIngredient(formObject)" #formObject="ngForm">
+      <div class="row">
+        <div class="form-group col-5">
+          <label class="font-weight-bold" for="ingredientName"
+            >Ingredient Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="ingredientName"
+            aria-describedby="ingredientName"
+            name="itemName"
+            ngModel
+            required
+          />
+        </div>
+        <div class="form-group col-2">
+          <label class="font-weight-bold" for="ingredientAmount">Amount</label>
+          <input
+            type="number"
+            class="form-control"
+            id="ingredientAmount"
+            name="itemAmout"
+            ngModel
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button
+            type="submit"
+            class="btn btn-success mr-2"
+            [disabled]="!formObject.valid"
+          >
+            {{ editMode ? "Update" : "Add" }}
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger mr-2"
+            [disabled]="!editMode"
+            (click)="deleteItem()"
+          >
+            Danger
+          </button>
+          <button type="button" class="btn btn-primary" (click)="clearForm()">
+            Clear
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
